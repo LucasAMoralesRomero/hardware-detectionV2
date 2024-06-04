@@ -1,4 +1,6 @@
 #include "screen.h"
+#include <string>
+using namespace std;
 
 string screen::getScreen()
 {
@@ -6,5 +8,5 @@ string screen::getScreen()
 	width = GetSystemMetrics(SM_CXSCREEN);
 	//obtenemeos el alto de la pantalla
 	height = GetSystemMetrics(SM_CYSCREEN);
-	return (width + "x" + height);
+	return to_string(width) + "x" + to_string(height);
 }

@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
 #include<Windows.h>
+#include <string>
 
 using namespace std;
 
 class screen
 {
 public:
+	//funcion que devuelve el tamaño de la pantalla
 	string getScreen();
 
 private:
