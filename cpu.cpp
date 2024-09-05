@@ -1,5 +1,5 @@
 //incluimos el encabezado de la clase
-#include "../cpu.h"
+#include "cpu.h"
 #include <iostream>
 #include <comdef.h>
 #include <Wbemidl.h>
