@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <string>
+#include <iostream>
+#include <iomanip>
 //header de deteccion de pantalla
 #include "screen.h"
+//header de deteccion de CPU
 #include "cpu.h"
+//header de detecion de memoria ram
+#include "ram.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -26,6 +31,9 @@ int main(int argc, char *argv[])
 	else {
 		std::cerr << "No se pudo obtener la información del CPU." << std::endl;
 	}
+	ram * memoriaRam = new ram;
+
+	cout << "Memoria RAM:" << fixed << setprecision(1) <<memoriaRam->getRam() << " Gb." << endl;
 
 	return 0;
 }
