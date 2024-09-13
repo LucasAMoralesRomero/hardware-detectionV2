@@ -8,6 +8,10 @@
 #include "cpu.h"
 //header de detecion de memoria ram
 #include "ram.h"
+//header de deteccion de discos
+#include "disco.h"
+//header de deteccion de gpu
+#include "gpu.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -34,6 +38,26 @@ int main(int argc, char *argv[])
 	ram * memoriaRam = new ram;
 
 	cout << "Memoria RAM:" << fixed << setprecision(1) <<memoriaRam->getRam() << " Gb." << endl;
+	cout << endl;
+	//deteccion de discos
+	//creamos una instancia de disco
+	Disco disco;
+	// Llamamos a la función para obtener la información de los discos
+	disco.obtenerInfoDiscos();
 
+	cout << endl;
+	//deteccion de gpu (con directx)
+// Crear una instancia de la clase GPU
+	GPU gpuDetector;
+
+	// Obtener la lista de GPUs detectadas
+	std::vector<GPUInfo> gpus = gpuDetector.getGPUs();
+
+	// Mostrar la información de las GPUs detectadas
+	for (size_t i = 0; i < gpus.size(); i++) {
+		std::cout << "GPU #" << i << ": " << gpus[i].name << std::endl;
+		std::cout << "Fabricante: " << gpus[i].manufacturer << std::endl;
+		std::cout << "-----------------------------" << std::endl;
+	}
 	return 0;
 }
