@@ -12,6 +12,8 @@
 #include "disco.h"
 //header de deteccion de gpu
 #include "gpu.h"
+//header de deteccion del sistema operativo (version de windows)
+#include "so.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -59,5 +61,10 @@ int main(int argc, char *argv[])
 		std::cout << "Fabricante: " << gpus[i].manufacturer << std::endl;
 		std::cout << "-----------------------------" << std::endl;
 	}
+
+	//creamos una instancia de deteccion de sistea operativo
+	so detectarSistema;
+	detectarSistema.detectSO();
+
 	return 0;
 }
